@@ -1,20 +1,26 @@
 import React from 'react'
 import './watch.scss'
 import { IoArrowBack } from "react-icons/io5";
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Watch() {
+  const {state} = useLocation();
+  const movie = state.movie; 
+
   return (
     <div className="watch">
-      <div className="back">
-        <IoArrowBack />
-        Home
-      </div>
+      <Link to="/">
+        <div className="back">
+          <IoArrowBack />
+          Home
+          </div>
+        </Link>
       <video
        className="video" 
        autoPlay 
        progress 
        controls 
-       src="https://vod-progressive.akamaized.net/exp=1624452918~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2400%2F14%2F362003850%2F1486625955.mp4~hmac=d6f829e7bb83f1ee6a28047d00aa2c1083c8fe5036c8084a4adf1c3903085856/vimeo-prod-skyfire-std-us/01/2400/14/362003850/1486625955.mp4"/>
+       src={movie.video}/>
     </div>
   )
-}
+};

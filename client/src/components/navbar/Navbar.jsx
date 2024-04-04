@@ -3,6 +3,7 @@ import './navbar.scss'
 import { IoSearch } from "react-icons/io5";
 import { IoNotifications } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,8 +17,12 @@ export default function Navbar() {
       <div className="container">
         <div className="left">
           <img src="https://logohistory.net/wp-content/uploads/2023/05/Netflix-Logo.png" alt=""/>
-          <span>Homepage</span>
-          <span>Series</span>
+          <Link to="/" className="link">
+            <span className="navbarmainLinks">Homepage</span>
+          </Link>
+          <Link to="/series" className="link">
+            <span className="navbarmainLinks">Series</span>
+          </Link>
           <span>Movies</span>
           <span>New and Popular</span>
           <span>My List</span>

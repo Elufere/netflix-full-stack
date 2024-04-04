@@ -13,7 +13,7 @@ import {
 
 
 function App() {
-  const user = false;
+  const user = true;
   return (
     <Router>
       <Routes>
@@ -30,7 +30,7 @@ function App() {
           <>
             <Route path="/movies" element={<Home type="movies" />}/>
             <Route path="/series" element={<Home type="series" />}/>
-            <Route path="/watch"><Watch /></Route>
+            <Route path="/watch" element={<Watch />}></Route>
           </>
           )
         }
